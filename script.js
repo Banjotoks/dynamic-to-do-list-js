@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM elements selected:', { addButton, taskInput, taskList });
 
     // Ensure elements exist before adding event listeners
-    if (addButton && taskInput && taskList) { 
+    if (addButton && taskInput && taskList) {
         // Add task function
         function addTask() {
             const taskText = taskInput.value.trim();
@@ -64,3 +64,4 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('One or more DOM elements not found:', { addButton, taskInput, taskList });
     }
 });
+
