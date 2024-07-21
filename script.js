@@ -11,8 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ensure elements exist before adding event listeners
     if (addButton && taskInput && taskList) {
         // Add task function
-        function addTask() {
-            const taskText = taskInput.value.trim();
+        function addTask(taskText) {
             console.log('Task input value:', taskText);
 
             // Validate input
@@ -49,19 +48,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Event listener for button click
         addButton.addEventListener('click', () => {
+            const taskText = taskInput.value.trim();
             console.log('Add button clicked');
-            addTask();
+            addTask(taskText);
         });
 
         // Event listener for pressing 'Enter' key
         taskInput.addEventListener('keypress', (event) => {
             if (event.key === 'Enter') {
+                const taskText = taskInput.value.trim();
                 console.log('Enter key pressed');
-                addTask();
+                addTask(taskText);
             }
         });
     } else {
         console.error('One or more DOM elements not found:', { addButton, taskInput, taskList });
     }
 });
-
